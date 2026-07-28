@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Resume Analyzer — Blue</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- PDF.js -->
+  <script src="https://unpkg.com/pdfjs-dist@2.16.105/build/pdf.min.js"></script>
+
+  <!-- Mammoth for DOCX -->
+  <script src="https://cdn.jsdelivr.net/npm/mammoth@1.11.0/mammoth.browser.min.js"></script>
+
+  <!-- Tesseract.js for OCR (scanned PDFs) -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+</head>
+
+<body>
+  <main class="container">
+
+    <header class="header">
+      <h1>AI Resume Analyzer</h1>
+      <p class="lead">Upload PDF, DOCX, or JSON — get a score, matched trending skills and suggestions.</p>
+    </header>
+
+    <!-- Upload Section -->
+    <section class="uploader card">
+      <label class="file-drop" id="fileDrop">
+        <input id="fileInput" type="file" accept=".pdf,.docx,application/json,.json,.txt" />
+
+        <div id="fileLabelText">
+          <strong>Drop or select a file</strong>
+          <p class="muted">PDF · DOCX · JSON · TXT</p>
+        </div>
+      </label>
+
+      <div class="controls">
+        <button id="analyzeBtn" class="btn primary">Analyze Resume</button>
+        <button id="clearBtn" class="btn ghost">Clear</button>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="resultArea" class="result-area hidden">
+      <div class="result-grid">
+
+        <div class="card overview">
+          <h2>Score</h2>
+
+          <div id="scoreCard" class="scoreCard">
+            <div id="scoreValue" class="scoreValue">--</div>
+            <div id="scoreDesc" class="scoreDesc">No data yet</div>
+            <div class="progress"><div id="progressFill"></div></div>
+          </div>
+
+          <h3>Basics Found</h3>
+          <ul id="basicsList" class="basics"></ul>
+
+          <h3>Summary</h3>
+          <p id="summaryText" class="muted small">—</p>
+
+          <div class="actions">
+            <button id="downloadReport" class="btn primary small">Download Report</button>
+            <button id="copyText" class="btn ghost small">Copy Parsed Text</button>
+          </div>
+        </div>
+
+        <div class="card details">
+          <h2>Matched Skills</h2>
+          <div id="skillsCloud" class="skillsCloud"></div>
+
+          <h2>Parsed Text</h2>
+          <pre id="parsedText" class="parsedText"></pre>
+        </div>
+      </div>
+
+      <section class="suggestions card">
+        <h2>Suggestions & Next Steps</h2>
+        <ul id="suggestionList"></ul>
+      </section>
+    </section>
+
+    <footer class="footer muted">Made by Mohd kaif with &#10084</footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
