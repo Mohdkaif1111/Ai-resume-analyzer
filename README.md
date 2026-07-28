@@ -21,10 +21,9 @@ Mammoth.js (DOCX Parsing)
 # 📁 Project Structure
 AI-Resume-Analyzer/
 │── index.html
-│── style.css
-│── script.js
-│── assets/
-│── README.md
+│── styles.css
+│── app.js
+
 
 # ⚙️ How It Works
 Upload your resume.
