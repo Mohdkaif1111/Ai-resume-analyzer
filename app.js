@@ -1,12 +1,3 @@
-/* app.js
-   Browser-only resume analyzer.
-   Uses:
-     - PDF.js
-     - Mammoth
-     - Tesseract.js (OCR)
-*/
-
-// -------------------- Config & Trending Skills --------------------
 const TRENDING_SKILLS = [
   "python","javascript","typescript","react","node.js","node","express","django","flask",
   "sql","postgresql","mysql","mongodb","aws","azure","gcp","docker","kubernetes",
